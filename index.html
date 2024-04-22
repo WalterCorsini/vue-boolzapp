@@ -66,7 +66,9 @@
                 <ul class="overflow">
                     <li 
                         v-for="(curContact,index) in contacts"
-                        class="friend-card">
+                        class="friend-card"
+                        @click="count = index">
+                        
                         <img :src="`./img-ritagliate/avatar${curContact.avatar}.jpg`" alt="">
                         <!-- friend name hidden -->
                         <div class="friend-name">
@@ -122,7 +124,7 @@
             <!-- section chat -->
             <section class="section-chat">
 
-                <div v-for="curMessage in contacts[0].messages" class="message"
+                <div v-for="curMessage in contacts[count].messages" class="message"
                 :class="curMessage.status === 'sent' ? 'me-chat' : 'you-chat'">
                     <p>{{curMessage.message}}</p>
                     <div class="chevron fa-solid fa-chevron-down">
@@ -145,7 +147,9 @@
                 <!-- section input message -->
                 <a href=""><i class="emoji icon fa-regular fa-face-smile"></i></a>
                 <section class="input-message">
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" 
+                    v-model.trim="newMessage"
+                    @keyup.enter="sendMessage(count)">
                 </section>
                 <a href=""><i class="icon fa-solid fa-microphone"></i></a>
                 <!-- /section input message -->

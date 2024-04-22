@@ -2,6 +2,8 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+    newMessage: "",
+    count: 0,
       contacts: [
         {
           name: "Michele",
@@ -167,4 +169,16 @@ createApp({
       ],
     };
   },
+  methods:{
+    sendMessage: function(i){
+        if(this.newMessage !== ""){
+            message = {
+                date: "10/10/2023",
+                message: this.newMessage,
+                status: "received",
+            };
+        this.contacts[i].messages.push(message);
+        };
+    }
+  }
 }).mount("#app");
