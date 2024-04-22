@@ -71,10 +71,10 @@
                         
                         <img :src="`./img-ritagliate/avatar${curContact.avatar}.jpg`" alt="">
                         <!-- friend name hidden -->
-                        <div class="friend-name">
+                        <div v-for="curMessage,i in curContact.messages" v-show="i === curContact.messages.length-1" class="friend-name">
                             <h3>{{curContact.name}}</h3>
-                            <span><!-- ultimo messaggio utente--></span>
-                            <span><!--ora invio ultimo messaggio--></span>
+                            <span >{{curMessage.message}}</span>
+                            <span>{{curMessage.date}}</span>
                         </div>
                         <!-- friend name hidden -->
                     </li>

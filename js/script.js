@@ -182,6 +182,7 @@ createApp({
                 message: "Dipende",
                 status: "sent",
             };
+            this.newMessage="";
             this.contacts[i].messages.push(message);
             setTimeout(() =>{ this.contacts[i].messages.push(messageYou) }, 1000); 
         };
