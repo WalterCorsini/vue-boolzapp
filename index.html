@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- styile -->
+    <link rel="stylesheet" href="./css/master.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="./css/responsive.css">
+    <!-- vue js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>PippoZapp</title>
+</head>
+
+<body>
+    <!-- header hidden -->
+    <header class="header-desktop">
+    </header>
+    <!-- /header hidden -->
+
+    <!-- main -->
+    <main id="app">
+
+        <!-- first-container -->
+        <div class="first-container">
+
+            <!-- section list-chat -->
+            <section class="list-chat">
+                <div class="user-card">
+                    <img src="./img-ritagliate/13.jpg" alt="">
+
+                    <ul>
+                        <li>
+                            <a href=""><i class="fa-solid fa-circle-notch"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa-solid fa-message"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- li-notify item hidden in mobile e tablet -->
+                <div id="li-notify">
+                    <i class="fa-solid fa-bell-slash"></i>
+                    <div>
+                        <h3>Ricevi notifiche di nuovi messaggi</h3>
+                        <a href="">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <!-- li-notify item hidden in mobile e tablet -->
+
+                <!-- li-search item hidden in mobile e tablet -->
+                <div id="li-search">
+                    <i class="icon fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                </div>
+                <!-- li-search item hidden in mobile e tablet -->
+                <ul class="overflow">
+                    <li 
+                        v-for="(curContact,index) in contacts"
+                        class="friend-card">
+                        <img :src="`./img-ritagliate/avatar${curContact.avatar}.jpg`" alt="">
+                        <!-- friend name hidden -->
+                        <div class="friend-name">
+                            <h3>{{curContact.name}}</h3>
+                            <span><!-- ultimo messaggio utente--></span>
+                            <span><!--ora invio ultimo messaggio--></span>
+                        </div>
+                        <!-- friend name hidden -->
+                    </li>
+
+                </ul>
+            </section>
+            <!-- /section list-chat -->
+        </div>
+
+        <!-- right container -->
+        <div class="second-container">
+
+            <!-- main-header -->
+            <header class="main-header">
+
+                <!-- user -->
+                <div class="user">
+                    <div class="img-header">
+                        <img src="./img-ritagliate/9.jpg" alt="">
+                    </div>
+                    <div class="text-header">
+                        <h3 class="username"> Javier Zanetti</h3>
+                        <span class="access"> Ultimo accesso oggi alle 10:31</span>
+                    </div>
+                </div>
+                <!-- /user -->
+
+                <!-- list-header -->
+                <div class="list-header">
+                    <ul>
+                        <li>
+                            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa-solid fa-paperclip"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- list-header -->
+
+            </header>
+            <!-- /main-header  -->
+
+            <!-- section chat -->
+            <section class="section-chat">
+
+                <div class="message me-chat">
+                    <p>no non ci credo, i tutor sono Juventini....</p>
+                    <div class="chevron fa-solid fa-chevron-down">
+                        <div class="menu-ham">
+                            <ul>
+                                <li><button>info messaggi</button></li>
+                                <li><button>cancella messaggi</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span>10.10</span>
+                </div>
+
+                <div class=" message you-chat">
+                    <p>senza parole!!!!</p>
+                    <div class="chevron fa-solid fa-chevron-down">
+                        <div class="menu-ham">
+                            <ul>
+                                <li><button>info messaggi</button></li>
+                                <li><button>cancella messaggi</button></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <span>10.10</span>
+                </div>
+
+            </section>
+            <!-- /section chat -->
+
+            <!-- footer -->
+            <footer>
+
+                <!-- section input message -->
+                <a href=""><i class="emoji icon fa-regular fa-face-smile"></i></a>
+                <section class="input-message">
+                    <input type="text" placeholder="Scrivi un messaggio">
+                </section>
+                <a href=""><i class="icon fa-solid fa-microphone"></i></a>
+                <!-- /section input message -->
+
+            </footer>
+            <!-- /footer -->
+
+        </div>
+        <!-- /right container -->
+
+    </main>
+    <!-- /main -->
+
+    <!-- footer hidden -->
+    <footer class="footer-desktop">
+    </footer>
+    <!-- footer hidden -->
+
+    <!-- script -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

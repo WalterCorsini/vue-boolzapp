@@ -1,0 +1,145 @@
+@media screen and (min-width: 768px) {
+    /* header */
+    .list-header{
+    display: block;
+    }
+
+    .list-header ul{
+        display: flex;   
+    }
+
+    .list-header li{
+        padding: 10px;
+    }
+
+    .main-header{
+        display: flex;
+        height: 80px;
+        justify-content: space-between;
+    }
+    /* first container */
+    .first-container{
+        width: 100px;
+        display: block;
+    }
+
+    .user-card{
+        height: 80px;
+    }
+
+    /* second container */
+    .second-container{
+        width: calc(100% - 100px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .message{
+        min-width: 459px;
+        max-width: 471px;
+    }
+    /* footer */
+    .input-message{
+        width: 60%;
+    }
+
+    footer .icon{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* common */
+    body{
+        height: 100vh;
+        position: relative;
+    }
+
+    /* header */
+    .header-desktop{
+        display: block;
+    }
+
+    /* main */
+    main{
+        height: 95vh;
+        position: absolute;
+        width: 80%;
+        top: 2%;
+        left: 10%;
+    }
+    /* footer */
+    .footer-desktop{
+        display: block;
+    }
+
+    /* first container */
+    .first-container{
+        width: 350px;
+    }
+    
+    .user-card {
+        height: 80px;
+    }
+
+    .user-card ul{
+        display: flex;
+    }
+
+    .user-card a,
+    .list-header a{
+        color: rgb(181, 181, 181);
+    }
+    
+    .user-card img{
+        margin: 0;
+        margin-left: 15px;
+    }
+    
+    #li-notify{
+        display: flex;
+    }
+    
+    #li-search{
+        display:flex;
+    }
+    
+    .friend-name{
+        display: block;
+    }
+
+    .list-chat{
+        height: 95vh;
+    }
+
+    .list-chat .friend-card {
+        height: 90px;
+        display: flex;
+        position: relative;
+        align-items: center;
+        font-size: 20px;
+    }
+    
+    .friend-name span{
+        font-size: 17px;
+        color: rgb(126, 126, 126);
+    }
+    
+    .friend-name span:last-child{
+        position: absolute;
+        top: 15%;
+        right: 5%;
+    }
+    
+    .friend-card img{
+        margin: 0;
+        margin-left:5px;
+        margin-right: 10px;
+    }
+
+/* second container */
+    .second-container{
+        width: calc(100% - 350px);
+    }
+
+}
