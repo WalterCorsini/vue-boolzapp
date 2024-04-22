@@ -72,12 +72,13 @@
                 <ul class="overflow">
                     <li 
                         v-for="(curContact,index) in contacts"
-                        v-show="curContact.visible"
+                        v-show="curContact.visible && curContact.messages.length !== 0"
                         class="friend-card"
                         @click="count = index">
                         
                         <img :src="`./img-ritagliate/avatar${curContact.avatar}.jpg`" alt="">
                         <!-- friend name hidden -->
+                        
                         <div v-for="curMessage,i in curContact.messages" v-show="i === curContact.messages.length-1" class="friend-name">
                             <h3>{{curContact.name}}</h3>
                             <span >{{curMessage.message}}</span>
@@ -131,14 +132,22 @@
             <!-- section chat -->
             <section class="section-chat">
 
-                <div v-for="curMessage in contacts[count].messages" class="message"
+                <div v-for="curMessage, index in contacts[count].messages" class="message"
                 :class="curMessage.status === 'sent' ? 'me-chat' : 'you-chat'">
                     <p>{{curMessage.message}}</p>
                     <div class="chevron fa-solid fa-chevron-down">
                         <div class="menu-ham">
                             <ul>
-                                <li><button>info messaggi</button></li>
-                                <li><button>cancella messaggi</button></li>
+                                <li>
+                                    <button>
+                                        info messaggi
+                                    </button>
+                                </li>
+                                <li>
+                                    <button @click="deleteMessage(curMessage)">
+                                        cancella messaggi
+                                    </button>
+                                </li>
                             </ul>
                         </div>
                     </div>

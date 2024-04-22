@@ -203,5 +203,15 @@ createApp({
               }
             });
     },
+    deleteMessage: function(curText){
+        console.log(curText);
+        this.contacts.forEach((curContact,i) => {
+            for(let j=0; j<curContact.messages.length; j++){
+                if(curContact.messages[j] === curText){
+                    curContact.messages.splice(j,1);
+                }
+            }
+        });
+    }
   }
 }).mount("#app");
