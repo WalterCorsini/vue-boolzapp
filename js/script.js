@@ -2,9 +2,6 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-        myMessage: [
-            
-        ],
       contacts: [
         {
           name: "Michele",

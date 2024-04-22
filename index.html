@@ -122,28 +122,15 @@
             <!-- section chat -->
             <section class="section-chat">
 
-                <div class="message me-chat">
-                    <p>no non ci credo, i tutor sono Juventini....</p>
+                <div v-for="curMessage in contacts[0].messages" class="message"
+                :class="curMessage.status === 'sent' ? 'me-chat' : 'you-chat'">
+                    <p>{{curMessage.message}}</p>
                     <div class="chevron fa-solid fa-chevron-down">
                         <div class="menu-ham">
                             <ul>
                                 <li><button>info messaggi</button></li>
                                 <li><button>cancella messaggi</button></li>
                             </ul>
-                        </div>
-                    </div>
-                    <span>10.10</span>
-                </div>
-
-                <div class=" message you-chat">
-                    <p>senza parole!!!!</p>
-                    <div class="chevron fa-solid fa-chevron-down">
-                        <div class="menu-ham">
-                            <ul>
-                                <li><button>info messaggi</button></li>
-                                <li><button>cancella messaggi</button></li>
-                            </ul>
-
                         </div>
                     </div>
                     <span>10.10</span>
