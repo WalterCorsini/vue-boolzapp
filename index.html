@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./css/master.css">
     <!-- responsive -->
     <link rel="stylesheet" href="./css/responsive.css">
+    <!-- luxon js -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.min.js'></script>
     <!-- vue js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>PippoZapp</title>
@@ -60,12 +62,17 @@
                 <!-- li-search item hidden in mobile e tablet -->
                 <div id="li-search">
                     <i class="icon fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                    <input 
+                    @input="searchContact"
+                    v-model="textContact"
+                    @keyup.enter="searchContact"
+                    type="text" placeholder="cerca o inizia una nuova chat">
                 </div>
                 <!-- li-search item hidden in mobile e tablet -->
                 <ul class="overflow">
                     <li 
                         v-for="(curContact,index) in contacts"
+                        v-show="curContact.visible"
                         class="friend-card"
                         @click="count = index">
                         
@@ -167,6 +174,7 @@
     <footer class="footer-desktop">
     </footer>
     <!-- footer hidden -->
+
 
     <!-- script -->
     <script src="./js/script.js"></script>

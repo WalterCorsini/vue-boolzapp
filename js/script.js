@@ -1,8 +1,11 @@
 const { createApp } = Vue;
+
 createApp({
-  data() {
-    return {
+    data() {
+        return {
+    DateTime: luxon.DateTime,
     newMessage: "",
+    textContact: "",
     count: 0,
       contacts: [
         {
@@ -171,21 +174,34 @@ createApp({
   },
   methods:{
     sendMessage: function(i){
+        dateNow = this.DateTime.local();
+        dateNow = dateNow.toString();
         if(this.newMessage !== ""){
             const message = {
                 date: "10/10/2023",
                 message: this.newMessage,
-                status: "received",
-            };
-            const messageYou = {
-                date: "10/10/2023",
-                message: "Dipende",
                 status: "sent",
             };
+            const messageYou = {
+                date: dateNow,
+                message: "Dipende",
+                status: "received",
+            };
+            console.log(messageYou);
             this.newMessage="";
             this.contacts[i].messages.push(message);
             setTimeout(() =>{ this.contacts[i].messages.push(messageYou) }, 1000); 
         };
-    }
+    },
+    searchContact: function(){
+            this.contacts.forEach((curContact) => {
+              const name = curContact.name.toLowerCase();
+              if (name.includes(this.textContact.toLowerCase())) {
+                curContact.visible = true;
+              } else {
+                curContact.visible = false;
+              }
+            });
+    },
   }
 }).mount("#app");
