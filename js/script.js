@@ -172,12 +172,18 @@ createApp({
   methods:{
     sendMessage: function(i){
         if(this.newMessage !== ""){
-            message = {
+            const message = {
                 date: "10/10/2023",
                 message: this.newMessage,
                 status: "received",
             };
-        this.contacts[i].messages.push(message);
+            const messageYou = {
+                date: "10/10/2023",
+                message: "Dipende",
+                status: "sent",
+            };
+            this.contacts[i].messages.push(message);
+            setTimeout(() =>{ this.contacts[i].messages.push(messageYou) }, 1000); 
         };
     }
   }
