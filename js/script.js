@@ -6,6 +6,8 @@ createApp({
     DateTime: luxon.DateTime,
     newMessage: "",
     textContact: "",
+    hiddenText: true,
+    music: false,
     count: 0,
       contacts: [
         {
@@ -16,16 +18,19 @@ createApp({
             {
               date: "10/01/2020 15:30:55",
               message: "Hai portato a spasso il cane?",
+              info: false,
               status: "sent",
             },
             {
               date: "10/01/2020 15:50:00",
               message: "Ricordati di stendere i panni",
+              info: false,
               status: "sent",
             },
             {
               date: "10/01/2020 16:15:22",
               message: "Tutto fatto!",
+              info: false,
               status: "received",
             },
           ],
@@ -38,16 +43,19 @@ createApp({
             {
               date: "20/03/2020 16:30:00",
               message: "Ciao come stai?",
+              info: false,
               status: "sent",
             },
             {
               date: "20/03/2020 16:30:55",
               message: "Bene grazie! Stasera ci vediamo?",
+              info: false,
               status: "received",
             },
             {
               date: "20/03/2020 16:35:00",
               message: "Mi piacerebbe ma devo andare a fare la spesa.",
+              info: false,
               status: "sent",
             },
           ],
@@ -60,16 +68,19 @@ createApp({
             {
               date: "28/03/2020 10:10:40",
               message: "La Marianna va in campagna",
+              info: false,
               status: "received",
             },
             {
               date: "28/03/2020 10:20:10",
               message: "Sicuro di non aver sbagliato chat?",
+              info: false,
               status: "sent",
             },
             {
               date: "28/03/2020 16:15:22",
               message: "Ah scusa!",
+              info: false,
               status: "received",
             },
           ],
@@ -82,11 +93,13 @@ createApp({
             {
               date: "10/01/2020 15:30:55",
               message: "Lo sai che ha aperto una nuova pizzeria?",
+              info: false,
               status: "sent",
             },
             {
               date: "10/01/2020 15:50:00",
               message: "Si, ma preferirei andare al cinema",
+              info: false,
               status: "received",
             },
           ],
@@ -99,11 +112,13 @@ createApp({
             {
               date: "10/01/2020 15:30:55",
               message: "Ricordati di chiamare la nonna",
+              info: false,
               status: "sent",
             },
             {
               date: "10/01/2020 15:50:00",
               message: "Va bene, stasera la sento",
+              info: false,
               status: "received",
             },
           ],
@@ -116,16 +131,19 @@ createApp({
             {
               date: "10/01/2020 15:30:55",
               message: "Ciao Claudia, hai novità?",
+              info: false,
               status: "sent",
             },
             {
               date: "10/01/2020 15:50:00",
               message: "Non ancora",
+              info: false,
               status: "received",
             },
             {
               date: "10/01/2020 15:51:00",
               message: "Nessuna nuova, buona nuova",
+              info: false,
               status: "sent",
             },
           ],
@@ -138,11 +156,13 @@ createApp({
             {
               date: "10/01/2020 15:30:55",
               message: "Fai gli auguri a Martina che è il suo compleanno!",
+              info: false,
               status: "sent",
             },
             {
               date: "10/01/2020 15:50:00",
               message: "Grazie per avermelo ricordato, le scrivo subito!",
+              info: false,
               status: "received",
             },
           ],
@@ -155,16 +175,19 @@ createApp({
             {
               date: "10/01/2020 15:30:55",
               message: "Ciao, andiamo a mangiare la pizza stasera?",
+              info: false,
               status: "received",
             },
             {
               date: "10/01/2020 15:50:00",
               message: "No, l'ho già mangiata ieri, ordiniamo sushi!",
+              info: false,
               status: "sent",
             },
             {
               date: "10/01/2020 15:51:00",
               message: "OK!!",
+              info: false,
               status: "received",
             },
           ],
@@ -180,11 +203,13 @@ createApp({
             const message = {
                 date: "10/10/2023",
                 message: this.newMessage,
+                info: false,
                 status: "sent",
             };
             const messageYou = {
                 date: dateNow,
                 message: "Dipende",
+                info: false,
                 status: "received",
             };
             console.log(messageYou);
@@ -209,6 +234,7 @@ createApp({
             for(let j=0; j<curContact.messages.length; j++){
                 if(curContact.messages[j] === curText){
                     curContact.messages.splice(j,1);
+                    curContact.messages[j].info = true;
                 }
             }
         });

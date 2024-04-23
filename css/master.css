@@ -207,6 +207,8 @@ main {
     border-radius: 10px;
     margin-bottom: 5px;
     width: 70%;
+    line-height: 40px;
+    min-height: 40px;
     padding: 10px 45px 10px 10px;
 }
 
@@ -244,13 +246,13 @@ main {
 .message span{
     color: rgb(192, 192, 192);
     position: absolute;
-    text-align: right;
-    bottom:10px;
+    
+    top:30px;
     right: 15px;
 }
 
 .menu-ham{
-    opacity: 0;
+    opacity: 1;
     transition: 1s;
     flex-direction: column;
     width: 140px;
@@ -280,9 +282,8 @@ main {
     background-color: rgb(214, 214, 214);
 }
 
-.chevron:hover .menu-ham {
-    opacity: 1;
-    transition: 1s;
+.hidden{
+    display: none;
 }
 
 /* section input-message */

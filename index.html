@@ -51,7 +51,8 @@
 
                 <!-- li-notify item hidden in mobile e tablet -->
                 <div id="li-notify">
-                    <i class="fa-solid fa-bell-slash"></i>
+                    <!-- <i v-show="music === false" class="fa-solid fa-bell-slash"></i> -->
+                    <i v-show="music === false" class="fa-solid fa-bell"></i>
                     <div>
                         <h3>Ricevi notifiche di nuovi messaggi</h3>
                         <a href="">Attiva notifiche desktop</a>
@@ -135,8 +136,12 @@
                 <div v-for="curMessage, index in contacts[count].messages" class="message"
                 :class="curMessage.status === 'sent' ? 'me-chat' : 'you-chat'">
                     <p>{{curMessage.message}}</p>
-                    <div class="chevron fa-solid fa-chevron-down">
-                        <div class="menu-ham">
+                    <div 
+                    @click="curMessage.info = !curMessage.info"
+                    class="chevron fa-solid fa-chevron-down">
+                        <div 
+                        :class="{'hidden' : curMessage.info === false}"
+                        class="menu-ham">
                             <ul>
                                 <li>
                                     <button>
@@ -151,7 +156,7 @@
                             </ul>
                         </div>
                     </div>
-                    <span>10.10</span>
+                    <span :class="{'hidden' : curMessage.info === true}">{{curMessage.date}}</span>
                 </div>
 
             </section>
