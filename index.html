@@ -29,7 +29,8 @@
 
         <!-- main -->
         <main id="app">
-            <div class="container">
+            <div 
+                class="container">
                 <!-- first container list-chat -->
                 <section class=" first-container list-chat">
                     <div class="user-card">
@@ -49,9 +50,11 @@
                             </li>
                         </ul>
                     </div>
-
+                <div v-if="contacts.length !== 0">
                     <!-- li-notify item hidden in mobile e tablet -->
-                    <div id="li-notify">
+                    <div
+                    v-if="contacts.length !== 0"
+                        id="li-notify">
                         <i @click.stop="notify = !notify"
                             v-show="notify === false"
                             class="fa-solid fa-bell-slash"></i>
@@ -80,7 +83,9 @@
                             placeholder="cerca o inizia una nuova chat">
                     </div>
                     <!-- li-search item hidden in mobile e tablet -->
-                    <ul class="overflow">
+                    <ul
+                    v-if="contacts.length !== 0"  
+                    class="overflow">
                         <li v-for="(curContact,index) in contacts"
                             v-show="curContact.visible"
                             class="friend-card"
@@ -90,12 +95,12 @@
                                 :src="`./img-ritagliate/avatar${curContact.avatar}.jpg`"
                                 alt>
                             <!-- friend name hidden -->
-                            <div class="friend-name">
+                            <div
+                                v-if="curContact.messages.length !== 0"
+                                class="friend-name">
                                 <h3>{{curContact.name}}</h3>
-                                <span
-                                    v-if="curContact.messages.length !== 0">{{curContact.messages[curContact.messages.length-1].message}}</span>
-                                <span
-                                    v-if="curContact.messages.length !== 0">{{curContact.messages[curContact.messages.length-1].date}}</span>
+                                <span>{{curContact.messages[curContact.messages.length-1].message}}</span>
+                                <span>{{curContact.messages[curContact.messages.length-1].date}}</span>
                             </div>
                             <!-- friend name hidden -->
                         </li>
@@ -110,12 +115,16 @@
 
                         <!-- user -->
                         <div class="user">
-                            <div class="img-header">
-                                <img
+                            <div
+                                v-if="contacts.length !==0" 
+                                class="img-header">
+                                <img 
                                     :src="`./img-ritagliate/avatar${contacts[count].avatar}.jpg`"
                                     alt>
                             </div>
-                            <div class="text-header">
+                            <div
+                            v-if="contacts.length !== 0" 
+                            class="text-header">
                                 <h3 class="username"> {{ contacts[count].name
                                     }}</h3>
                                 <span
@@ -146,7 +155,7 @@
                                         <i class="fa-solid fa-ellipsis-vertical"></i>
                                         <div class="flex-col"
                                         v-show="menuHam === true">
-                                        <span @click.prevent.stop="console.log('cancella chat')">Cancella chat</span>
+                                        <span @click.prevent.stop="deleteChat()">Cancella chat</span>
                                         <span @click.prevent.stop="deleteAllMessage()">Svuota messaggi</span>
                                     </div>
                                 </div>
@@ -161,7 +170,8 @@
                         <!-- /main-header  -->
 
                         <!-- section chat -->
-                        <section class="section-chat">
+                        <section 
+                            class="section-chat">
 
                             <div
                                 v-for="curMessage, index in contacts[count].messages"
@@ -224,6 +234,7 @@
                     </div>
                     <!-- /right container -->
                 </div>
+            </div>
             </main>
             <!-- /main -->
 

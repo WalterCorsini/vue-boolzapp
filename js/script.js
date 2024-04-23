@@ -261,7 +261,14 @@ createApp({
     deleteAllMessage: function(){
       this.contacts[this.count].messages.splice(0,this.contacts[this.count].messages.length);
       this.menuHam = false;
+    },
+    deleteChat: function(){
+      if(this.contacts.length > 1){
+      this.contacts.splice(this.count,1);
+      this.menuHam = false;
+      } else {
+        this.contacts.splice(this.count,1);
+      }
     }
-
   }
 }).mount("#app");

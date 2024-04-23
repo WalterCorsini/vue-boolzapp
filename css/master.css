@@ -47,6 +47,8 @@ main {
 
 .flex-col{
     background-color: white;
+    position: fixed;
+    z-index: 999;
     display: flex;
     flex-direction: column;
     font-size: 15px;
