@@ -8,6 +8,7 @@ createApp({
     textContact: "",
     hiddenText: true,
     notify: false,
+    onlineMessage: "",
     count: 0,
       contacts: [
         {
@@ -224,7 +225,14 @@ createApp({
             console.log(messageYou);
             this.newMessage="";
             this.contacts[i].messages.push(message);
-            setTimeout(() =>{ this.contacts[i].messages.push(messageYou) }, 1000); 
+            this.onlineMessage = "sta scrivendo.... online";
+            setTimeout(() =>{ this.contacts[i].messages.push(messageYou)
+            this.onlineMessage = "online";
+              setTimeout(() =>{
+            this.onlineMessage = "";
+              },3000);
+        }, 3000); 
+
         };
     },
     searchContact: function(){
@@ -249,6 +257,7 @@ createApp({
             }
         });
     },
+
 
   }
 }).mount("#app");
