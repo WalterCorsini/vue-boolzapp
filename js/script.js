@@ -258,7 +258,10 @@ createApp({
             }
         });
     },
-
+    deleteAllMessage: function(){
+      this.contacts[this.count].messages.splice(0,this.contacts[this.count].messages.length);
+      this.menuHam = false;
+    }
 
   }
 }).mount("#app");
