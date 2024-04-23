@@ -7,7 +7,7 @@ createApp({
     newMessage: "",
     textContact: "",
     hiddenText: true,
-    music: false,
+    notify: false,
     count: 0,
       contacts: [
         {
@@ -193,12 +193,21 @@ createApp({
           ],
         },
       ],
+      rndNumberText: 0,
+      arrayText:[
+        "Amala pazza inter amala",
+        "siamo la curva nord Milano",
+        "eeee per la gente che,aaaaama soltanto te",
+        "chi non salta bianconero eh eh",
+        "milanista chiaccherone, quanta fantasia che hai"]
     };
   },
   methods:{
     sendMessage: function(i){
-        dateNow = this.DateTime.local();
-        dateNow = dateNow.toLocaleString(luxon.DateTime.DATETIME_SHORT_WITH_SECOND);
+      const now = luxon.DateTime.now();
+      const dateNow = now.toLocaleString(luxon.DateTime.DATETIME_SHORT_WITH_SECONDS);
+      rndNumberText = Math.floor(Math.random() * this.arrayText.length);
+      console.log(rndNumberText);
         if(this.newMessage !== ""){
             const message = {
                 date: dateNow,
@@ -206,9 +215,9 @@ createApp({
                 info: false,
                 status: "sent",
             };
-            const messageYou = {
+                const messageYou = {
                 date: dateNow,
-                message: "Dipende",
+                message: this.arrayText[rndNumberText],
                 info: false,
                 status: "received",
             };
@@ -239,6 +248,7 @@ createApp({
               }
             }
         });
-    }
+    },
+
   }
 }).mount("#app");

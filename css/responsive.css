@@ -12,26 +12,27 @@
         padding: 10px;
     }
 
-    .main-header{
-        display: flex;
-        height: 80px;
-        justify-content: space-between;
-    }
     /* first container */
     .first-container{
         width: 100px;
         display: block;
     }
-
+    
     .user-card{
         height: 80px;
     }
-
+    
     /* second container */
     .second-container{
         width: calc(100% - 100px);
         display: flex;
         flex-direction: column;
+    }
+    
+    .main-header{
+        display: flex;
+        height: 80px;
+        justify-content: space-between;
     }
 
     .message{
@@ -62,7 +63,6 @@
 
     /* main */
     main{
-        height: 95vh;
         position: absolute;
         width: 80%;
         top: 2%;
@@ -108,8 +108,8 @@
         display: block;
     }
 
-    .list-chat{
-        height: 95vh;
+    .first-container{
+        height: 80vh;
     }
 
     .list-chat .friend-card {
@@ -136,10 +136,4 @@
         margin-left:5px;
         margin-right: 10px;
     }
-
-/* second container */
-    .second-container{
-        width: calc(100% - 350px);
-    }
-
 }

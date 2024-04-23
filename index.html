@@ -27,12 +27,9 @@
 
     <!-- main -->
     <main id="app">
-
-        <!-- first-container -->
-        <div class="first-container">
-
-            <!-- section list-chat -->
-            <section class="list-chat">
+            <div class="container">
+            <!-- first container list-chat -->
+            <section class=" first-container list-chat">
                 <div class="user-card">
                     <img src="./img-ritagliate/13.jpg" alt="">
 
@@ -51,11 +48,13 @@
 
                 <!-- li-notify item hidden in mobile e tablet -->
                 <div id="li-notify">
-                    <!-- <i v-show="music === false" class="fa-solid fa-bell-slash"></i> -->
-                    <i v-show="music === false" class="fa-solid fa-bell"></i>
+                    <i @click.stop="notify = !notify" v-show="notify === false" class="fa-solid fa-bell-slash"></i>
+                    <i @click.stop="notify = !notify" v-show="notify === true" class="fa-solid fa-bell"></i>
                     <div>
                         <h3>Ricevi notifiche di nuovi messaggi</h3>
-                        <a href="">Attiva notifiche desktop</a>
+                        <a v-show="notify === false" href="">Attiva notifiche desktop</a>
+                        <a v-show="notify === true" href="">Disattiva notifiche desktop</a>
+
                     </div>
                 </div>
                 <!-- li-notify item hidden in mobile e tablet -->
@@ -71,8 +70,7 @@
                 </div>
                 <!-- li-search item hidden in mobile e tablet -->
                 <ul class="overflow">
-                    <li 
-                        v-for="(curContact,index) in contacts"
+                    <li v-for="(curContact,index) in contacts"
                         v-show="curContact.visible"
                         class="friend-card"
                         @click="count = index">
@@ -86,15 +84,12 @@
                         </div>
                         <!-- friend name hidden -->
                     </li>
-
                 </ul>
             </section>
-            <!-- /section list-chat -->
-        </div>
+            <!-- /first container list-chat -->
 
         <!-- right container -->
         <div class="second-container">
-
             <!-- main-header -->
             <header class="main-header">
 
@@ -128,6 +123,7 @@
 
             </header>
             <!-- /main-header  -->
+
 
             <!-- section chat -->
             <section class="section-chat">
@@ -171,7 +167,12 @@
                     v-model.trim="newMessage"
                     @keyup.enter="sendMessage(count)">
                 </section>
-                <a href=""><i class="icon fa-solid fa-microphone"></i></a>
+                <a v-on:click.prevent
+                    v-show="newMessage.length === 0"
+                    href=""><i class="icon fa-solid fa-microphone"></i></a>
+                <a v-on:click.prevent="sendMessage(count)"
+                v-show="newMessage.length !== 0" href="">
+                <i class="icon fa-regular fa-paper-plane"></i></a>
                 <!-- /section input message -->
 
             </footer>
@@ -179,7 +180,7 @@
 
         </div>
         <!-- /right container -->
-
+    </div>
     </main>
     <!-- /main -->
 
