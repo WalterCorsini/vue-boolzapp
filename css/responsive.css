@@ -2,10 +2,18 @@
     /* header */
     .list-header{
     display: block;
+    position: relative;
     }
 
     .list-header ul{
-        display: flex;   
+        display: flex;
+        position: absolute;
+        bottom: -30px;
+        right: 0;
+    }
+    .list-header ul li{
+        background-color: #EAEAEA;
+        margin-top: 20px;
     }
 
     .list-header li{

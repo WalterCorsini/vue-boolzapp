@@ -8,6 +8,7 @@ createApp({
     textContact: "",
     hiddenText: true,
     notify: false,
+    menuHam: false,
     onlineMessage: "",
     count: 0,
       contacts: [
