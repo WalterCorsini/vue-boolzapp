@@ -102,11 +102,11 @@
                 <!-- user -->
                 <div class="user">
                     <div class="img-header">
-                        <img src="./img-ritagliate/9.jpg" alt="">
+                        <img :src="`./img-ritagliate/avatar${contacts[count].avatar}.jpg`" alt="">
                     </div>
                     <div class="text-header">
-                        <h3 class="username"> Javier Zanetti</h3>
-                        <span class="access"> Ultimo accesso oggi alle 10:31</span>
+                        <h3 class="username"> {{ contacts[count].name }}</h3>
+                        <span class="access"> ultimo accesso</span>
                     </div>
                 </div>
                 <!-- /user -->
