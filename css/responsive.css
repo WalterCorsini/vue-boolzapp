@@ -121,13 +121,13 @@
     }
     
     .friend-name span{
-        font-size: 17px;
+        font-size: 13px;
         color: rgb(126, 126, 126);
     }
     
     .friend-name span:last-child{
         position: absolute;
-        top: 15%;
+        top: 5%;
         right: 5%;
     }
     

@@ -73,17 +73,16 @@
                 <ul class="overflow">
                     <li 
                         v-for="(curContact,index) in contacts"
-                        v-show="curContact.visible && curContact.messages.length !== 0"
+                        v-show="curContact.visible"
                         class="friend-card"
                         @click="count = index">
                         
                         <img :src="`./img-ritagliate/avatar${curContact.avatar}.jpg`" alt="">
                         <!-- friend name hidden -->
-                        
-                        <div v-for="curMessage,i in curContact.messages" v-show="i === curContact.messages.length-1" class="friend-name">
+                        <div class="friend-name">
                             <h3>{{curContact.name}}</h3>
-                            <span >{{curMessage.message}}</span>
-                            <span>{{curMessage.date}}</span>
+                            <span v-if="curContact.messages.length !== 0">{{curContact.messages[curContact.messages.length-1].message}}</span>
+                            <span v-if="curContact.messages.length !== 0">{{curContact.messages[curContact.messages.length-1].date}}</span>
                         </div>
                         <!-- friend name hidden -->
                     </li>
@@ -106,7 +105,7 @@
                     </div>
                     <div class="text-header">
                         <h3 class="username"> {{ contacts[count].name }}</h3>
-                        <span class="access"> ultimo accesso</span>
+                        <span v-if="contacts[count].messages.length !== 0" class="access"> {{contacts[count].messages[contacts[count].messages.length-1].date}}</span>
                     </div>
                 </div>
                 <!-- /user -->

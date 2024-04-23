@@ -198,10 +198,10 @@ createApp({
   methods:{
     sendMessage: function(i){
         dateNow = this.DateTime.local();
-        dateNow = dateNow.toString();
+        dateNow = dateNow.toLocaleString(luxon.DateTime.DATETIME_SHORT_WITH_SECOND);
         if(this.newMessage !== ""){
             const message = {
-                date: "10/10/2023",
+                date: dateNow,
                 message: this.newMessage,
                 info: false,
                 status: "sent",
@@ -219,9 +219,9 @@ createApp({
         };
     },
     searchContact: function(){
-            this.contacts.forEach((curContact) => {
-              const name = curContact.name.toLowerCase();
-              if (name.includes(this.textContact.toLowerCase())) {
+      this.contacts.forEach((curContact) => {
+        const name = curContact.name.toLowerCase();
+        if (name.includes(this.textContact.toLowerCase())){
                 curContact.visible = true;
               } else {
                 curContact.visible = false;
@@ -229,13 +229,14 @@ createApp({
             });
     },
     deleteMessage: function(curText){
-        console.log(curText);
         this.contacts.forEach((curContact,i) => {
             for(let j=0; j<curContact.messages.length; j++){
-                if(curContact.messages[j] === curText){
-                    curContact.messages.splice(j,1);
-                    curContact.messages[j].info = true;
-                }
+              if(curContact.messages[j] === curText){
+                curContact.messages.splice(j,1);
+              }
+              if(curContact.messages.length !== 0){
+              curContact.messages.info=false;
+              }
             }
         });
     }
