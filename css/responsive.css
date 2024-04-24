@@ -122,7 +122,7 @@
     }
 
     .list-chat .friend-card {
-        height: 90px;
+        height: 120px;
         display: flex;
         position: relative;
         align-items: center;

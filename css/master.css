@@ -69,9 +69,9 @@ main {
     background-color: rgba(0,0,0,0.1);
 }
 
-.overflow{
+/* .overflow{
     overflow-y: scroll;
-}
+} */
 
 .second-container {
     height: 100%;
@@ -133,10 +133,6 @@ main {
 .list-chat .friend-card {
     border-top: 1px solid rgb(237, 237, 237);
     background-color: rgb(255, 255, 255);
-}
-
-.friend-card img{
-    /* max-width: 50%; */
 }
 
 .list-chat .friend-card:hover{
