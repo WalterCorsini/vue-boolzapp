@@ -283,9 +283,7 @@ createApp({
               messages: [],
             },
           ];
-        this.noChat = true;
       }
-      this.noChat = true;
     },
     createChat: function(){
       copy = this.nameNewContact;

@@ -59,6 +59,11 @@ main {
     width: 150px;
 }
 
+.flex-col span{
+    font-size: 20px;
+}
+
+
 .flex-col span:hover{
     background-color: rgba(0,0,0,0.1);
 }

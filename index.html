@@ -180,14 +180,14 @@
                                         <div class="flex-col"
                                             v-show="menuHam === true">
                                             <div
-                                                @click.prevent="noChat = !noChat">
+                                                @click.stop="noChat = !noChat, menuHam = !menuHam">
                                                 <span v-show="!noChat">Crea
                                                     nuova chat</span>
                                                 <span v-show="noChat">torna in
                                                     chat</span>
                                             </div>
                                             <span
-                                                @click.prevent.stop="noChat===false ? deleteChat() : ''">Cancella
+                                                @click.prevent.stop="noChat === false ? deleteChat() : ''">Cancella
                                                 chat</span>
                                             <span
                                                 @click.prevent.stop="noChat===false ? deleteAllMessage() : ''">Svuota
