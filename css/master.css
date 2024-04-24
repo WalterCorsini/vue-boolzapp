@@ -124,15 +124,19 @@ main {
     display: none;
     height: 100vh;
     max-height: 100vh;
+    min-width: 90px;
+    width: 90px;
     display: flex;
     flex-direction: column;
 }
 
 .list-chat .friend-card {
-    width: 100%;
-    height: calc(100% / 9);
     border-top: 1px solid rgb(237, 237, 237);
     background-color: rgb(255, 255, 255);
+}
+
+.friend-card img{
+    /* max-width: 50%; */
 }
 
 .list-chat .friend-card:hover{
