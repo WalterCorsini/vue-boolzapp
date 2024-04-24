@@ -268,7 +268,7 @@ createApp({
     deleteAllMessage: function(){
       this.contacts[this.count].messages.splice(0,this.contacts[this.count].messages.length);
       this.menuHam = false;
-      this.noChat = true;
+      this.noChat = false;
       },
     deleteChat: function(){
       console.log(this.count)
