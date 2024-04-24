@@ -68,7 +68,7 @@
                                 v-show="notify === true"
                                 class="fa-solid fa-bell"></i>
                             <div>
-                                <h3>Ricevi notifiche di nuovi messaggi</h3>
+                                <h3 v-show="notify === false">Ricevi notifiche di nuovi messaggi</h3>
                                 <a v-show="notify === false" href>Attiva
                                     notifiche
                                     desktop</a>
