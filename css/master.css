@@ -284,6 +284,17 @@ main {
     width: 50px;
 }
 
+#input-create-chat{
+    padding: 300px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+}
+#input-create-chat input{
+    font-size: 30px;
+}
+
 .menu-ham{
     opacity: 1;
     transition: 1s;

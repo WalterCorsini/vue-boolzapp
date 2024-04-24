@@ -127,7 +127,7 @@
                     <header class="main-header">
                         
                         <!-- user -->
-                        <div 
+                        <div v-if="!noChat"
                                 class="user">
                                 <div
                                     class="img-header">
@@ -195,8 +195,9 @@
                             class="section-chat">
 
                             <!-- gestione dei messaggi inviati e ricevuti -->
-                            <div v-show="noChat">
+                            <div id="input-create-chat" v-show="noChat">
                                 <input @keyup.enter="nameNewContact !== '' ? createChat() : ''" type="text" placeholder="cerca contatto" v-model.trim="nameNewContact">
+                                <button  @click.prevent.stop="nameNewContact !== '' ? createChat() : ''">aggiungi</button>
                             </div>
                             <div
                                 v-show="!noChat"

@@ -10,8 +10,8 @@ createApp({
     notify: false,
     menuHam: false,
     onlineMessage: "",
-    noChat: false,
-    addChat: false,
+    noChat: false,   // false
+    addChat: false,   // false
     count: 0,
     nameNewContact: "",
 
@@ -41,31 +41,31 @@ createApp({
             },
           ],
         },
-        {
-          name: "Fabio",
-          avatar: "_2",
-          visible: true,
-          messages: [
-            {
-              date: "20/03/2020 16:30:00",
-              message: "Ciao come stai?",
-              info: false,
-              status: "sent",
-            },
-            {
-              date: "20/03/2020 16:30:55",
-              message: "Bene grazie! Stasera ci vediamo?",
-              info: false,
-              status: "received",
-            },
-            {
-              date: "20/03/2020 16:35:00",
-              message: "Mi piacerebbe ma devo andare a fare la spesa.",
-              info: false,
-              status: "sent",
-            },
-          ],
-        },
+        // {
+        //   name: "Fabio",
+        //   avatar: "_2",
+        //   visible: true,
+        //   messages: [
+        //     {
+        //       date: "20/03/2020 16:30:00",
+        //       message: "Ciao come stai?",
+        //       info: false,
+        //       status: "sent",
+        //     },
+        //     {
+        //       date: "20/03/2020 16:30:55",
+        //       message: "Bene grazie! Stasera ci vediamo?",
+        //       info: false,
+        //       status: "received",
+        //     },
+        //     {
+        //       date: "20/03/2020 16:35:00",
+        //       message: "Mi piacerebbe ma devo andare a fare la spesa.",
+        //       info: false,
+        //       status: "sent",
+        //     },
+        //   ],
+        // },
       //   {
       //     name: "Samuele",
       //     avatar: "_3",
