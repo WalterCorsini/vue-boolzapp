@@ -43,6 +43,7 @@ main {
 .first-container {
     display: none;
     overflow-y: scroll;
+    /* min-width: 400px; */
     background-color: white;
 }
 
@@ -299,11 +300,8 @@ main {
 }
 
 #input-create-chat{
-    padding: 200px;
     display: flex;
-    text-align: center;
     justify-content: center;
-    gap: 10px;
 }
 #input-create-chat input{
     font-size: 30px;

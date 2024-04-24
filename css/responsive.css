@@ -1,6 +1,7 @@
 @media screen and (min-width: 768px) {
     /* header */
     .list-header{
+    min-width: 300px;
     display: block;
     position: relative;
     }
@@ -93,7 +94,7 @@
     .user-card ul{
         display: flex;
     }
-
+    
     .user-card a,
     .list-header a{
         color: rgb(181, 181, 181);

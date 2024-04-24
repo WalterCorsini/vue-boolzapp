@@ -32,71 +32,71 @@
 
                 <!-- first container(left) list-chat -->
                 <section class=" first-container list-chat">
+
                     <!-- header list-chat -->
-                    
-                        <div class="user-card">
-                            <img src="./img-ritagliate/13.jpg" alt>
+                    <div class="user-card">
+                        <img src="./img-ritagliate/13.jpg" alt>
 
-                            <ul>
-                                <li>
-                                    <i class="fa-solid fa-circle-notch"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-message"></i>
-                                </li>
-                                <li>
-                                    <i
-                                        class="fa-solid fa-ellipsis-vertical"></i>
-                                </li>
-                                <li v-show="!noChat">
-                                    <i @click.prevent.stop="noChat = !noChat"
-                                        class="fa-solid fa-plus"></i>
-                                </li>
-                                <li v-show="noChat">
-                                    <i @click.prevent.stop="noChat = !noChat"
-                                        class="fa-solid fa-arrow-left"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- header list-chat -->
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-circle-notch"></i>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-message"></i>
+                            </li>
+                            <li>
+                                <i
+                                    class="fa-solid fa-ellipsis-vertical"></i>
+                            </li>
+                            <li v-show="!noChat">
+                                <i @click.prevent.stop="noChat = !noChat"
+                                    class="fa-solid fa-plus"></i>
+                            </li>
+                            <li v-show="noChat">
+                                <i @click.prevent.stop="noChat = !noChat"
+                                    class="fa-solid fa-arrow-left"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- header list-chat -->
 
-                        <!-- li-notify -->
-                        <!-- notify gestisce l'icona campanella con campanella sbarrata -->
-                        <div id="li-notify">
-                            <i @click.stop="notify = !notify"
-                                v-show="notify === false"
-                                class="fa-solid fa-bell-slash"></i>
-                            <i @click.stop="notify = !notify"
-                                v-show="notify === true"
-                                class="fa-solid fa-bell"></i>
-                            <div>
-                                <h3 v-show="notify === false">Ricevi notifiche
-                                    di nuovi messaggi</h3>
-                                <a v-show="notify === false" href>Attiva
-                                    notifiche
-                                    desktop</a>
-                                <a v-show="notify === true" href>Disattiva
-                                    notifiche
-                                    desktop</a>
-                            </div>
+                    <!-- li-notify -->
+                    <div id="li-notify">
+                        <i @click.stop="notify = !notify"
+                            v-show="notify === false"
+                            class="fa-solid fa-bell-slash"></i>
+                        <i @click.stop="notify = !notify"
+                            v-show="notify === true"
+                            class="fa-solid fa-bell"></i>
+                        <div>
+                            <h3 v-show="notify === false">Ricevi notifiche
+                                di nuovi messaggi</h3>
+                            <a v-show="notify === false" href>Attiva
+                                notifiche
+                                desktop</a>
+                            <a v-show="notify === true" href>Disattiva
+                                notifiche
+                                desktop</a>
                         </div>
-                        <!-- /li-notify-->
-                        <!-- li-search -->
-                        <!-- ascolta l'input udente invocando la funzione searchContact per ricercate un contatto -->
-                        <div id="li-search">
-                            <i class="icon fa-solid fa-magnifying-glass"></i>
-                            <input
+                    </div>
+                    <!-- /li-notify-->
+
+                    <!-- li-search -->
+                    <!-- listen to the hearing input by invoking the searchContact function to search for a contact -->
+                    <div id="li-search">
+                        <i class="icon fa-solid fa-magnifying-glass"></i>
+                        <input
                             @input="searchContact"
                             v-model="textContact"
                             @keyup.enter="searchContact"
                             type="text"
                             placeholder="cerca o inizia una nuova chat">
-                        </div>
-                        <!-- /li-search -->
-               
+                    </div>
+                    <!-- listen to the hearing input by invoking the searchContact function to search for a contact -->
+                    <!-- /li-search -->
 
                     <!-- contact list -->
-                    <!-- genera lista contatti, gestendo la variabile count che cambia al click su un utente della lista contatti visualizzando la sua chat -->
+                    <!-- generate contact list, managing the count variable that changes when you click on a contact list user by viewing his chat -->
                     <ul
                         class="overflow">
                         <li v-for="(curContact,index) in contacts"
@@ -106,8 +106,6 @@
                             <img
                                 :src="`./img-ritagliate/avatar${curContact.avatar}.jpg`"
                                 alt>
-                            <!-- friend name -->
-                            <!-- v-if="curContact.messages.length !== 0" -->
                             <div
                                 class="friend-name">
                                 <h3>{{curContact.name}}</h3>
@@ -116,13 +114,13 @@
                                 <span
                                     v-if="curContact.messages.length !== 0">{{curContact.messages[curContact.messages.length-1].date}}</span>
                             </div>
-                            <!-- /friend name -->
                         </li>
                     </ul>
+                    <!-- generate contact list, managing the count variable that changes when you click on a contact list user by viewing his chat -->
                     <!-- /contact list -->
 
                 </section>
-                <!-- first container(left) list-chat -->
+                <!-- / first container(left) list-chat -->
 
                 <!-- second container(right) chat-->
                 <section
@@ -130,7 +128,7 @@
                     <!-- main-header -->
                     <header class="main-header">
 
-                        <!-- user -->
+                        <!-- user status and info -->
                         <div v-if="!noChat"
                             class="user">
                             <div
@@ -150,7 +148,8 @@
                                     {{contacts[count].messages[contacts[count].messages.length-1].date}}</span>
                             </div>
                         </div>
-                        <!-- /user -->
+                        <!-- / user status and info -->
+                        
 
                         <!-- messaggio sta scrivendo online pc -->
                         <span>{{ onlineMessage }}</span>
@@ -160,8 +159,7 @@
                             <ul>
                                 <li>
                                     <a @click.prevent href>
-                                        <i
-                                            class="fa-solid fa-magnifying-glass"></i>
+                                        <i class="fa-solid fa-magnifying-glass"></i>
                                     </a>
                                 </li>
                                 <li>
@@ -169,7 +167,9 @@
                                         <i class="fa-solid fa-paperclip"></i>
                                     </a>
                                 </li>
+
                                 <!-- container menu-hamburger -->
+                                <!-- open and clos hamburger menu -->
                                 <li>
                                     <div
                                         @click.prevent.stop="menuHam =!menuHam"
@@ -177,6 +177,8 @@
                                         class="menu-header">
                                         <i
                                             class="fa-solid fa-ellipsis-vertical"></i>
+
+                                        <!-- show option list of hamburger menu -->
                                         <div class="flex-col"
                                             v-show="menuHam === true">
                                             <div
@@ -186,19 +188,26 @@
                                                 <span v-show="noChat">torna in
                                                     chat</span>
                                             </div>
+                                            <!-- click depends on the noChat variable-->
                                             <span
                                                 @click.prevent.stop="noChat === false ? deleteChat() : ''">Cancella
                                                 chat</span>
                                             <span
                                                 @click.prevent.stop="noChat===false ? deleteAllMessage() : ''">Svuota
                                                 messaggi</span>
+                                            <!-- /click depends on the noChat variable-->
+
                                         </div>
+                                        <!-- /show option list of hamburger menu -->
+
                                     </div>
                                 </li>
+                                <!-- /open and close hamburger menu -->
                                 <!-- container menu-hamburger -->
                             </ul>
                         </div>
-                        <!-- list-header -->
+                        <!-- / list-header -->
+
                     </header>
                     <!-- /main-header  -->
 
@@ -206,7 +215,7 @@
                     <section
                         class="section-chat">
 
-                        <!-- gestione dei messaggi inviati e ricevuti -->
+                        <!-- input create new chat -->
                         <div id="input-create-chat" v-show="noChat">
                             <input
                                 @keyup.enter="nameNewContact !== '' ? createChat() : ''"
@@ -215,6 +224,9 @@
                             <button
                                 @click.prevent.stop="nameNewContact !== '' ? createChat() : ''">aggiungi</button>
                         </div>
+                        <!-- / input create new chat -->
+
+                        <!-- management of sent and received messages -->
                         <div
                             v-show="!noChat"
                             v-for="curMessage, index in contacts[count].messages"
@@ -245,18 +257,18 @@
                             <span
                                 :class="{'hidden' : curMessage.info === true}">{{curMessage.date}}</span>
                         </div>
-                        <!-- gestione dei messaggi inviati e ricevuti -->
+                        <!-- / management of sent and received messages -->
 
                     </section>
                     <!-- /section chat -->
 
                     <!-- footer -->
-                    <!-- section input message -->
                     <footer>
+
+                        <!-- /input text management when clicking on send and when clicking on the button -->
                         <a @click.prevent href>
                             <i class="emoji icon fa-regular fa-face-smile"></i>
                         </a>
-                        <!-- gestion input text al click sull invio e al click sul pulsante -->
                         <div
                             class="input-message">
                             <input type="text"
@@ -265,16 +277,13 @@
                                 v-model.trim="newMessage"
                                 @keyup.enter="sendMessage(count)">
                         </div>
-                        <a v-on:click.prevent
-                            v-show="newMessage.length === 0"
+
+                        <a v-on:click.prevent.stop="sendMessage(count)"
                             href><i
-                                class="icon fa-solid fa-microphone"></i></a>
-                        <a v-on:click.prevent="sendMessage(count)"
-                            v-show="newMessage.length !== 0" href>
-                            <i
-                                class="icon fa-regular fa-paper-plane"></i></a>
+                                :class="newMessage.length === 0 ? 'fa-solid fa-microphone' : 'fa-regular fa-paper-plane fa-sm'"></i></a>
+                        <!-- /input text management when clicking on send and when clicking on the button -->
+
                     </footer>
-                    <!-- /section input message -->
                     <!-- /footer -->
 
                 </section>
