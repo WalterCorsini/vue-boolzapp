@@ -304,7 +304,7 @@ createApp({
         if(this.contacts[0].name === ""){
           this.contacts.splice(0,1);
         }
-
+        this.nameNewContact = "";
         this.noChat = true;
     }
    }
