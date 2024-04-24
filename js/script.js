@@ -10,7 +10,11 @@ createApp({
     notify: false,
     menuHam: false,
     onlineMessage: "",
+    noChat: false,
+    addChat: false,
     count: 0,
+    nameNewContact: "",
+
       contacts: [
         {
           name: "Michele",
@@ -62,138 +66,138 @@ createApp({
             },
           ],
         },
-        {
-          name: "Samuele",
-          avatar: "_3",
-          visible: true,
-          messages: [
-            {
-              date: "28/03/2020 10:10:40",
-              message: "La Marianna va in campagna",
-              info: false,
-              status: "received",
-            },
-            {
-              date: "28/03/2020 10:20:10",
-              message: "Sicuro di non aver sbagliato chat?",
-              info: false,
-              status: "sent",
-            },
-            {
-              date: "28/03/2020 16:15:22",
-              message: "Ah scusa!",
-              info: false,
-              status: "received",
-            },
-          ],
-        },
-        {
-          name: "Alessandro B.",
-          avatar: "_4",
-          visible: true,
-          messages: [
-            {
-              date: "10/01/2020 15:30:55",
-              message: "Lo sai che ha aperto una nuova pizzeria?",
-              info: false,
-              status: "sent",
-            },
-            {
-              date: "10/01/2020 15:50:00",
-              message: "Si, ma preferirei andare al cinema",
-              info: false,
-              status: "received",
-            },
-          ],
-        },
-        {
-          name: "Alessandro L.",
-          avatar: "_5",
-          visible: true,
-          messages: [
-            {
-              date: "10/01/2020 15:30:55",
-              message: "Ricordati di chiamare la nonna",
-              info: false,
-              status: "sent",
-            },
-            {
-              date: "10/01/2020 15:50:00",
-              message: "Va bene, stasera la sento",
-              info: false,
-              status: "received",
-            },
-          ],
-        },
-        {
-          name: "Claudia",
-          avatar: "_6",
-          visible: true,
-          messages: [
-            {
-              date: "10/01/2020 15:30:55",
-              message: "Ciao Claudia, hai novità?",
-              info: false,
-              status: "sent",
-            },
-            {
-              date: "10/01/2020 15:50:00",
-              message: "Non ancora",
-              info: false,
-              status: "received",
-            },
-            {
-              date: "10/01/2020 15:51:00",
-              message: "Nessuna nuova, buona nuova",
-              info: false,
-              status: "sent",
-            },
-          ],
-        },
-        {
-          name: "Federico",
-          avatar: "_7",
-          visible: true,
-          messages: [
-            {
-              date: "10/01/2020 15:30:55",
-              message: "Fai gli auguri a Martina che è il suo compleanno!",
-              info: false,
-              status: "sent",
-            },
-            {
-              date: "10/01/2020 15:50:00",
-              message: "Grazie per avermelo ricordato, le scrivo subito!",
-              info: false,
-              status: "received",
-            },
-          ],
-        },
-        {
-          name: "Davide",
-          avatar: "_8",
-          visible: true,
-          messages: [
-            {
-              date: "10/01/2020 15:30:55",
-              message: "Ciao, andiamo a mangiare la pizza stasera?",
-              info: false,
-              status: "received",
-            },
-            {
-              date: "10/01/2020 15:50:00",
-              message: "No, l'ho già mangiata ieri, ordiniamo sushi!",
-              info: false,
-              status: "sent",
-            },
-            {
-              date: "10/01/2020 15:51:00",
-              message: "OK!!",
-              info: false,
-              status: "received",
-            },
-          ],
-        },
+      //   {
+      //     name: "Samuele",
+      //     avatar: "_3",
+      //     visible: true,
+      //     messages: [
+      //       {
+      //         date: "28/03/2020 10:10:40",
+      //         message: "La Marianna va in campagna",
+      //         info: false,
+      //         status: "received",
+      //       },
+      //       {
+      //         date: "28/03/2020 10:20:10",
+      //         message: "Sicuro di non aver sbagliato chat?",
+      //         info: false,
+      //         status: "sent",
+      //       },
+      //       {
+      //         date: "28/03/2020 16:15:22",
+      //         message: "Ah scusa!",
+      //         info: false,
+      //         status: "received",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     name: "Alessandro B.",
+      //     avatar: "_4",
+      //     visible: true,
+      //     messages: [
+      //       {
+      //         date: "10/01/2020 15:30:55",
+      //         message: "Lo sai che ha aperto una nuova pizzeria?",
+      //         info: false,
+      //         status: "sent",
+      //       },
+      //       {
+      //         date: "10/01/2020 15:50:00",
+      //         message: "Si, ma preferirei andare al cinema",
+      //         info: false,
+      //         status: "received",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     name: "Alessandro L.",
+      //     avatar: "_5",
+      //     visible: true,
+      //     messages: [
+      //       {
+      //         date: "10/01/2020 15:30:55",
+      //         message: "Ricordati di chiamare la nonna",
+      //         info: false,
+      //         status: "sent",
+      //       },
+      //       {
+      //         date: "10/01/2020 15:50:00",
+      //         message: "Va bene, stasera la sento",
+      //         info: false,
+      //         status: "received",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     name: "Claudia",
+      //     avatar: "_6",
+      //     visible: true,
+      //     messages: [
+      //       {
+      //         date: "10/01/2020 15:30:55",
+      //         message: "Ciao Claudia, hai novità?",
+      //         info: false,
+      //         status: "sent",
+      //       },
+      //       {
+      //         date: "10/01/2020 15:50:00",
+      //         message: "Non ancora",
+      //         info: false,
+      //         status: "received",
+      //       },
+      //       {
+      //         date: "10/01/2020 15:51:00",
+      //         message: "Nessuna nuova, buona nuova",
+      //         info: false,
+      //         status: "sent",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     name: "Federico",
+      //     avatar: "_7",
+      //     visible: true,
+      //     messages: [
+      //       {
+      //         date: "10/01/2020 15:30:55",
+      //         message: "Fai gli auguri a Martina che è il suo compleanno!",
+      //         info: false,
+      //         status: "sent",
+      //       },
+      //       {
+      //         date: "10/01/2020 15:50:00",
+      //         message: "Grazie per avermelo ricordato, le scrivo subito!",
+      //         info: false,
+      //         status: "received",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     name: "Davide",
+      //     avatar: "_8",
+      //     visible: true,
+      //     messages: [
+      //       {
+      //         date: "10/01/2020 15:30:55",
+      //         message: "Ciao, andiamo a mangiare la pizza stasera?",
+      //         info: false,
+      //         status: "received",
+      //       },
+      //       {
+      //         date: "10/01/2020 15:50:00",
+      //         message: "No, l'ho già mangiata ieri, ordiniamo sushi!",
+      //         info: false,
+      //         status: "sent",
+      //       },
+      //       {
+      //         date: "10/01/2020 15:51:00",
+      //         message: "OK!!",
+      //         info: false,
+      //         status: "received",
+      //       },
+      //     ],
+      //   },
       ],
       rndNumberText: 0,
       arrayText:[
@@ -260,15 +264,45 @@ createApp({
     },
     deleteAllMessage: function(){
       this.contacts[this.count].messages.splice(0,this.contacts[this.count].messages.length);
+
       this.menuHam = false;
-    },
+      },
     deleteChat: function(){
-      if(this.contacts.length > 1){
+      console.log(this.count)
+      if(this.contacts.length > 1 && this.count !== this.contacts.length-1){
       this.contacts.splice(this.count,1);
       this.menuHam = false;
-      } else {
+      } else if(this.contacts.length > 1 && this.contacts.length-1 === this.count ) {
         this.contacts.splice(this.count,1);
+        this.count--;
+      } else{
+          this.contacts = [
+            {
+              name: "",
+              visible: false,  
+              messages: [],
+            },
+          ];
+        this.noChat = true;
       }
+    },
+    createChat: function(){
+      copy = this.nameNewContact;
+      console.log(copy);
+      this.contacts.push(
+        {
+          name: copy,
+          avatar: "_1",
+          visible:true,
+          messages: [],
+        }),
+
+        this.noChat = false;
+        if(this.contacts[0].name === ""){
+          this.contacts.splice(0,1);
+        }
+
     }
-  }
+   }
+
 }).mount("#app");
