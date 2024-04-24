@@ -201,12 +201,14 @@ createApp({
         },
       ],
       rndNumberText: 0,
+      rndNumberImg: 0,
       arrayText:[
         "Amala pazza inter amala",
         "siamo la curva nord Milano",
         "eeee per la gente che,aaaaama soltanto te",
         "chi non salta bianconero eh eh",
-        "milanista chiaccherone, quanta fantasia che hai"]
+        "milanista chiaccherone, quanta fantasia che hai"],
+      arrayImg:["_1","_2","_3","_4","_5","_6","_7","_8"]
     };
   },
   methods:{
@@ -289,10 +291,11 @@ createApp({
     createChat: function(){
       copy = this.nameNewContact;
       console.log(copy);
+      this.rndNumberImg = Math.floor(Math.random() * this.arrayImg.length);
       this.contacts.push(
         {
           name: copy,
-          avatar: "_1",
+          avatar: this.arrayImg[this.rndNumberImg],
           visible:true,
           messages: [],
         }),
