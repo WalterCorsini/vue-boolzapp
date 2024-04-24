@@ -285,6 +285,14 @@ main {
     right: 15px;
 }
 
+div.chevron:hover div.hidden{
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    background-color: white;
+}
+
+
 .message span{
     color: rgb(192, 192, 192);
     position: absolute;

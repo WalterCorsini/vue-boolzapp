@@ -9,6 +9,7 @@ createApp({
     hiddenText: true,
     notify: false,
     menuHam: false,
+    menuHamText: false,
     onlineMessage: "",
     noChat: false,   // false
     addChat: false,   // false

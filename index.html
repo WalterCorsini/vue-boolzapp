@@ -28,7 +28,7 @@
 
         <!-- main -->
         <main id="app">
-            <div class="container">
+            <div class="container" @click="menuHam = false">
 
                 <!-- first container(left) list-chat -->
                 <section class=" first-container list-chat">
@@ -234,11 +234,9 @@
                             :class="curMessage.status === 'sent' ? 'me-chat' : 'you-chat'">
                             <p>{{curMessage.message}}</p>
                             <div
-                                @click="curMessage.info = !curMessage.info"
                                 class="chevron fa-solid fa-chevron-down">
                                 <div
-                                    :class="{'hidden' : curMessage.info === false}"
-                                    class="menu-ham">
+                                    class="menu-ham hidden">
                                     <ul>
                                         <li>
                                             <button>
